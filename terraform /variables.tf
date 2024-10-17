@@ -1,4 +1,4 @@
-variable "resource_group_name" {
+variable "cov-use-port-poc-rg" {
     type        = string
     default     = "myTFResourceGroup"
     description = "RG name in Azure"
