@@ -1,6 +1,6 @@
-variable "cov-use-port-poc-rg" {
+variable "resource_group_name" {
     type        = string
-    default     = "myTFResourceGroup"
+    default     = "cov-use-port-poc-rg"
     description = "RG name in Azure"
 }
 
@@ -13,7 +13,7 @@ variable "location" {
 variable "storage_account_name" {
     type        = string
     description = "Storage Account name in Azure"
-    default     = "demo"
+    default     = "covuseportpocsa"
 }
 
 variable "port_run_id" {
