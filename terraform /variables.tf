@@ -6,7 +6,7 @@ variable "resource_group_name" {
 
 variable "location" {
     type        = string
-    default     = "westus2"
+    default     = "eastus"
     description = "RG location in Azure"
 }
 
