@@ -53,7 +53,7 @@ jobs:
     enabled: true
 
   - bash: |
-      ls /
+      ls -R
     displayName: List directory contents  
     enabled: true
 
