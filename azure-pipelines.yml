@@ -45,10 +45,17 @@ jobs:
     displayName: 'Fetch Access Token and Run ID'
     name: getToken
 
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: Cmi Emulator Drop'
+    inputs:
+      PathtoPublish: '$(Build.SourcesDirectory)'
+      ArtifactName: 'Sources Directory Drop'
+    enabled: true
+
   - bash: |
       ls /home/vsts/work/1/s/terraform/*
     displayName: List directory contents  
-    enabled: true
+    enabled: false
 
   - task: TerraformInstaller@2
     inputs:
