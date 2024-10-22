@@ -10,7 +10,6 @@ resources:
 
 variables:
   - group: port-credentials
-  - group: azure-service-principal
   - name: STORAGE_NAME
     value: ${{ parameters.PortWebhook.storage_name }}
   - name: STORAGE_LOCATION
