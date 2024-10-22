@@ -46,14 +46,16 @@ jobs:
     name: getToken
 
   - bash: |
-      ls *
+      ls /home/vsts/work/1/s/terraform/*
     displayName: List directory contents  
+    enabled: true
 
   - task: TerraformInstaller@2
     inputs:
       terraformVersion: 'latest'
     displayName: 'Install Terraform'
-    
+    enabled: false
+
   - bash: |      
       terraform init -input=false
     displayName: 'Initialize configuration'
