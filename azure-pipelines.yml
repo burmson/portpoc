@@ -47,17 +47,18 @@ jobs:
 
   - bash: |
       ls *
+    displayName: List directory contents  
 
   - bash: |      
       terraform init -input=false
     displayName: 'Initialize configuration'
     failOnStderr: true
-    workingDirectory: 'terraform'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
 
   - script: |
       terraform validate
     displayName: 'Terraform Validate'
-    workingDirectory: 'terraform'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
 
   - script: |
       tf_plan_and_apply() {
@@ -102,4 +103,4 @@ jobs:
           }' \
         "https://api.getport.io/v1/actions/runs/$(PORT_RUN_ID)"
     displayName: 'Update Run Status'
-    workingDirectory: 'terraform'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
