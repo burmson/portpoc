@@ -49,6 +49,10 @@ jobs:
       ls *
     displayName: List directory contents  
 
+  - task: TerraformInstaller@2
+    inputs:
+      terraformVersion: 'latest'
+  
   - bash: |      
       terraform init -input=false
     displayName: 'Initialize configuration'
