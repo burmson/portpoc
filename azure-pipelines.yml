@@ -45,6 +45,9 @@ jobs:
     displayName: 'Fetch Access Token and Run ID'
     name: getToken
 
+  - bash: |
+      ls *
+
   - bash: |      
       terraform init -input=false
     displayName: 'Initialize configuration'
