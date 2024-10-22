@@ -67,12 +67,12 @@ jobs:
       terraform init -input=false
     displayName: 'Initialize configuration'
     failOnStderr: true
-    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/'
+    workingDirectory: 'terraform'
 
   - script: |
       terraform validate
     displayName: 'Terraform Validate'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/'
+    workingDirectory: 'terraform'
 
   - script: |
       tf_plan_and_apply() {
@@ -117,4 +117,4 @@ jobs:
           }' \
         "https://api.getport.io/v1/actions/runs/$(PORT_RUN_ID)"
     displayName: 'Update Run Status'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/'
+    workingDirectory: 'terraform'
